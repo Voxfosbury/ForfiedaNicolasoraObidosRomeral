@@ -1,0 +1,289 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f7f4f2;
+}
+
+a {
+  text-decoration: none;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: scroll;
+}
+
+/* NAGIVATION BAR */
+
+nav {
+  width: 100%;
+  height: 10%;
+}
+
+.nav-link {
+  color: #18272f;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #ffc107;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* SLIDESHOW IMAGES */
+
+#slider {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.slideshow-img {
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  width: inherit;
+  object-fit: contain;
+}
+
+#slider #line {
+  height: 2px;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#slider #dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+#slider #dots li {
+  transition: 0.3s;
+  list-style-type: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 0.25em;
+  cursor: pointer;
+}
+
+#slider #dots li:hover,
+#slider #dots li.active {
+  background: #ffc107;
+}
+
+@keyframes line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#slider #back,
+#slider #forword {
+  width: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#slider #forword {
+  left: auto;
+  right: 0;
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+}
+
+#slider:hover #back,
+#slider:hover #forword {
+  opacity: 0.8;
+}
+
+ul#move {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  margin-right: 100%;
+}
+
+ul#move li {
+  transition: 1s;
+  min-width: 100%;
+  color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul#move li img {
+  width: 100%;
+}
+
+/* ITEMS GRID */
+
+#wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 15px;
+}
+.item {
+  padding: 15px;
+  background-color: white;
+}
+
+.item:hover {
+  cursor: pointer;
+  color: #ffc107;
+}
+
+.item-img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-name {
+  text-align: center;
+}
+
+.price {
+  text-transform: uppercase;
+  color: gray;
+  text-align: center;
+}
+
+.add-cart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 0;
+  background-color: #ffc107;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10%;
+}
+
+.add-cart:hover {
+  opacity: 0.6;
+}
+
+/* FOOTER */
+
+.bg-footer {
+  background-color: #ffc107;
+  padding: 50px 0 30px;
+}
+.footer-heading {
+  letter-spacing: 2px;
+}
+
+.footer-link a {
+  color: black;
+  text-decoration: none;
+  line-height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.footer-link a:hover {
+  color: white;
+}
+
+.contact-info {
+  color: black;
+  font-size: 14px;
+}
+
+.footer-alt {
+  color: black;
+}
+
+.footer-heading {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-heading:after {
+  width: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+}

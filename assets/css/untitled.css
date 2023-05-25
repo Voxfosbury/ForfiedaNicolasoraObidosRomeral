@@ -1,0 +1,20 @@
+.nav-link:hover {
+  background-color: rgba(254,0,147,0.61);
+}
+
+#btn_view:hover {
+  color: rgba(248,165,225,0.9);
+}
+
+#btn_edit:hover {
+  color: rgba(248,165,225,0.9);
+}
+
+#btn_delete:hover {
+  color: rgb(232,127,117);
+}
+
+.navbar-nav .show > .nav-link, .navbar-nav .nav-link.active {
+  color: var(--bs-navbar-active-color);
+}
+
